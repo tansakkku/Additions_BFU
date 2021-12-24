@@ -27,7 +27,7 @@ int main()
   
 
 
-    cout << endl << "maximalnoe chislo  " << max << endl << "summa cifr  " << sum << endl << "samaia chastaia   " << chastota << " - " << a_0 << "  ed" << endl;
+    cout << endl << "max number:  " << max << endl << "sum numbs:  " << sum << endl << "chastoe:   " << chastota << " - " << a_0 << " " << endl;
     return 0;
 }
 
