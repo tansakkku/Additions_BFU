@@ -4,25 +4,25 @@ using namespace std;
 int main()
 {
 	int final = 0;
-	int X1, Y1, X2, Y2, A;
-	cin >> X1 >> Y1 >> X2 >> Y2 >> A;
-	float f1 = X1 / Y1;
-	float f2 = X2 / Y2;
+	int Q1, P1, Q2, P2, A;
+	cin >> Q1 >> P1 >> Q2 >> P2 >> A;
+	float f1 = Q1 / P1;
+	float f2 = Q2 / P2;
 	float min = min(f1, f2);
 	float minY;
 	float minX;
 
 	if (f1 < 1 and Coef2 < 1)
 	{
-		if (min * Y1 == X1)
+		if (min * P1 == Q1)
 		{
-			minY = Y1;
-			minX = X1;
+			minY = P1;
+			minX = Q1;
 		}
 		else
 		{
-			minY = Y2;
-			minX = X2;
+			minY = P2;
+			minX = Q2;
 		}
 		while (A >= minX)
 		{
@@ -32,15 +32,15 @@ int main()
 	}
 	else
 	{
-		if (min * Y1 == X1)
+		if (min * P1 == Q1)
 		{
-			minY = Y2;
-			minX = X2;
+			minY = P2;
+			minX = Q2;
 		}
 		else
 		{
-			minY = Y1;
-			minX = X1;
+			minY = P1;
+			minX = Q1;
 		}
 		while (A >= minX)
 		{
@@ -49,10 +49,10 @@ int main()
 		}
 	}
 
-	if (ceil(float(A) / float(X1) * float(Y1)) >= ceil(float(A) / float(X2) * float(Y2)))
-		final = final + Y1 * (ceil(float(A) / float(X1)));
+	if (ceil(float(A) / float(Q1) * float(P1)) >= ceil(float(A) / float(Q2) * float(P2)))
+		final = final + P1 * (ceil(float(A) / float(Q1)));
 	else
-		final = final + Y2 * (ceil(float(A) / float(X2)));
+		final = final + P2 * (ceil(float(A) / float(Q2)));
 
 	cout << final;
 
