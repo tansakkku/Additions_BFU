@@ -1,60 +1,61 @@
-﻿#include <iostream>
+﻿﻿#include <iostream>
 using namespace std;
 
 int main()
 {
-	int final = 0;
+	int Final = 0;
 	int Q1, P1, Q2, P2, A;
-	cin >> Q1 >> P1 >> Q2 >> P2 >> A;
+	std::cin >> Q1 >> P1 >> Q2 >> P2 >> A;
 	float f1 = Q1 / P1;
 	float f2 = Q2 / P2;
-	float min = min(f1, f2);
-	float minY;
-	float minX;
+	float Min_f = min(f1, f2);
+	float Min_f_P;
+	float Min_f_Q;
 
-	if (f1 < 1 and Coef2 < 1)
+	if (f1 < 1 and f2 < 1)
 	{
-		if (min * P1 == Q1)
+		if (Min_f * P1 == Q1)
 		{
-			minY = P1;
-			minX = Q1;
+			Min_f_P = P1;
+			Min_f_Q = Q1;
 		}
 		else
 		{
-			minY = P2;
-			minX = Q2;
+			Min_f_P = P2;
+			Min_f_Q = Q2;
 		}
-		while (A >= minX)
+		while (A >= Min_f_Q)
 		{
-			final = final + minY;
-			A = A - minX;
+			Final = Final + Min_f_P;
+			A = A - Min_f_Q;
 		}
 	}
 	else
 	{
-		if (min * P1 == Q1)
+		if (Min_f * P1 == Q1)
 		{
-			minY = P2;
-			minX = Q2;
+			Min_f_P = P2;
+			Min_f_Q = Q2;
 		}
 		else
 		{
-			minY = P1;
-			minX = Q1;
+			Min_f_P = P1;
+			Min_f_Q = Q1;
 		}
-		while (A >= minX)
+		while (A >= Min_f_Q)
 		{
-			final = final + minY;
-			A = A - minX;
+			Final = Final + Min_f_P;
+			A = A - MinCoefQ;
 		}
 	}
 
-	if (ceil(float(A) / float(Q1) * float(P1)) >= ceil(float(A) / float(Q2) * float(P2)))
-		final = final + P1 * (ceil(float(A) / float(Q1)));
-	else
-		final = final + P2 * (ceil(float(A) / float(Q2)));
 
-	cout << final;
+	int X1, X2;
+	X1 = P1 * (ceil(float(A) / float(Q1)));
+	X2 = P2 * (ceil(float(A) / float(Q2)));
+	Final += min(X1, X2);
+
+	cout << Final;
 
 	return 0;
 }
