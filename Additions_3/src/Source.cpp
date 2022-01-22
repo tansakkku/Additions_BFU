@@ -16,16 +16,37 @@ namespace hd {
         return num;
     }
 
-    int Max(int max, int a_0, int a_1, int a_2, int a_3, int a_4, int a_5, int a_6, int a_7, int a_8, int a_9, int sum)
+    int Sum(int sum, int num)
+    {
+        while (num > 0)
+        {
+            sum += num % 10;
+            num = num / 10;
+        }
+
+        return sum;
+
+    }
+    int Max(int maxx, int num)
     {
 
         while (num > 0)
         {
-            sum += num % 10;
 
-            if (num % 10 > max)
-                max = num % 10;
+            if (num % 10 > maxx)
+                maxx = num % 10;
 
+            num = num / 10;
+        }
+
+        return maxx;
+    }
+
+
+    int Chastota(int a_0, int a_1, int a_2, int a_3, int a_4, int a_5, int a_6, int a_7, int a_8, int a_9, int chastota)
+    {
+        while (num > 0)
+        {
             if (0 == num % 10)
                 a_0++;
             if (1 == num % 10)
@@ -48,14 +69,10 @@ namespace hd {
                 a_9++;
 
             num = num / 10;
+
         }
 
-        return max;
-        return sum;
-    }
 
-    int Chastota(int a_0, int a_1, int a_2, int a_3, int a_4, int a_5, int a_6, int a_7, int a_8, int a_9, int chastota)
-    {
         if (a_0 <= a_1)
         {
             a_0 = a_1;

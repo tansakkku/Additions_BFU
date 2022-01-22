@@ -9,7 +9,6 @@
 #include "Header.hpp"
 
 using namespace std;
-using namespace hd;
 
 
 int main()
@@ -18,16 +17,16 @@ int main()
     cout << "Number: " << endl;
     cin >> num;
 
-  
+
 
     hd::Input();
-    hd::Max(a_0, a_1, a_2, a_3, a_4, a_5, a_6, a_7, a_8, a_9, max, sum);
+    hd::Sum(sum, num);
+    hd::Max(maxx, num);
     hd::Chastota(a_0, a_1, a_2, a_3, a_4, a_5, a_6, a_7, a_8, a_9, chastota);
 
-  
 
 
-    cout << endl << "max number:  " << max << endl << "sum numbs:  " << sum << endl << "chastoe:   " << chastota << " - " << a_0 << " " << endl;
+
+    cout << endl << "max number:  " << maxx << endl << "sum numbs:  " << sum << endl << "chastoe:   " << chastota << " - " << a_0 << " " << endl;
     return 0;
 }
-
